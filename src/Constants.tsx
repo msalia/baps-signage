@@ -11,9 +11,9 @@ export enum UIConfigs {
 }
 
 export enum UISizes {
-  ARROW = '12em',
+  ARROW = '10em',
   PADDING_VERTICAL = '5em',
   PADDING_HORIZONTAL = '3em',
-  FONT_TITLE = '12em',
-  FONT_SUBTITLE = '5em',
+  FONT_TITLE = '10em',
+  FONT_SUBTITLE = '4em',
 }
