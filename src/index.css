@@ -1,13 +1,34 @@
+@font-face {
+  font-family: "Body";
+  src: url("./assets/Avenir-LT-Std-45-Book.webp");
+}
+
+@font-face {
+  font-family: "Title";
+  src: url("./assets/Avenir-LT-Std-95-Black.webp");
+}
+
+html {
+  background-color: #fff9e9;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: "Body", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
