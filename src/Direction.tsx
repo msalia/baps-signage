@@ -106,6 +106,15 @@ function Direction({
       ? `Opening at ${startMoment.format('h:mma')}`
       : `Open until ${endMoment.format('h:mma')}`;
 
+    const openingDiff = moment.duration(startMoment.diff(currTime));
+    if (
+      openingDiff.get('hours') < 1 &&
+      openingDiff.get('minutes') > 0 &&
+      openingDiff.get('minutes') <= 30
+    ) {
+      timeText = `Opening in ${openingDiff.humanize()}`;
+    }
+
     const closingDiff = moment.duration(endMoment.diff(currTime));
     if (closingDiff.get('hours') < 1 && closingDiff.get('minutes') > 0) {
       timeClassName = styles.timeDisplayOrange;

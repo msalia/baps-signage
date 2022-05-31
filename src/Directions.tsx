@@ -7,10 +7,12 @@ import Direction from './Direction';
 const useStyles = createUseStyles({
   body: {
     padding: '3em 0',
+    boxSizing: 'border-box',
     display: 'flex',
     flexDirection: 'column',
     width: '100%',
-    height: '100%',
+    position: 'fixed',
+    bottom: 0,
   },
   justifyLeft: {
     justifyContent: 'left',
