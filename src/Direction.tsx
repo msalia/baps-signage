@@ -97,38 +97,48 @@ function Direction({
 
   let timeDisplay = null;
   if (timings != null) {
-    const {endHour, startHour} = timings;
-    const startMoment = getMoment(startHour);
-    const endMoment = getMoment(endHour);
-
+    let timeText = null;
     let timeClassName = styles.timeDisplayGreen;
-    let timeText = startMoment.isAfter(currTime)
-      ? `Opening at ${startMoment.format('h:mma')}`
-      : `Open until ${endMoment.format('h:mma')}`;
 
-    const openingDiff = moment.duration(startMoment.diff(currTime));
-    if (
-      openingDiff.get('hours') < 1 &&
-      openingDiff.get('minutes') > 0 &&
-      openingDiff.get('minutes') <= 30
-    ) {
-      timeText = `Opening in ${openingDiff.humanize()}`;
+    for (let index = 0; index < timings.length; index++) {
+      const {endHour, startHour} = timings[index];
+      const startMoment = getMoment(startHour);
+      const endMoment = getMoment(endHour);
+
+      if (currTime.isAfter(endMoment) && index !== timings.length - 1) {
+        continue;
+      }
+
+      timeText = startMoment.isAfter(currTime)
+        ? `Opening at ${startMoment.format('h:mma')}`
+        : `Open until ${endMoment.format('h:mma')}`;
+
+      const openingDiff = moment.duration(startMoment.diff(currTime));
+      if (
+        openingDiff.get('hours') < 1 &&
+        openingDiff.get('minutes') > 0 &&
+        openingDiff.get('minutes') <= 30
+      ) {
+        timeText = `Opening in ${openingDiff.humanize()}`;
+      }
+
+      const closingDiff = moment.duration(endMoment.diff(currTime));
+      if (closingDiff.get('hours') < 1 && closingDiff.get('minutes') > 0) {
+        timeClassName = styles.timeDisplayOrange;
+        timeText = `Closing in ${closingDiff.humanize()}`;
+      } else if (currTime.isAfter(endMoment)) {
+        timeClassName = styles.timeDisplayOrange;
+        timeText = 'Closed';
+      }
+      break;
     }
 
-    const closingDiff = moment.duration(endMoment.diff(currTime));
-    if (closingDiff.get('hours') < 1 && closingDiff.get('minutes') > 0) {
-      timeClassName = styles.timeDisplayOrange;
-      timeText = `Closing in ${closingDiff.humanize()}`;
-    } else if (currTime.isAfter(endMoment)) {
-      timeClassName = styles.timeDisplayOrange;
-      timeText = 'Closed';
-    }
-
-    timeDisplay = (
-      <span key="timeDisplay" className={timeClassName}>
-        {timeText}
-      </span>
-    );
+    timeDisplay =
+      timeText != null ? (
+        <span key="timeDisplay" className={timeClassName}>
+          {timeText}
+        </span>
+      ) : null;
   }
 
   const subItems = [
@@ -145,14 +155,14 @@ function Direction({
         <div className={styles.subtitle}>
           {subItems.map((item, idx) => {
             return (
-              <>
+              <React.Fragment key={idx}>
                 {item}
                 {idx !== subItems.length - 1 ? (
                   <span key={idx} className={styles.spacer}>
                     &middot;
                   </span>
                 ) : null}
-              </>
+              </React.Fragment>
             );
           })}
         </div>

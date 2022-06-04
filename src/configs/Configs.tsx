@@ -1,4 +1,4 @@
-export interface Timings {
+export interface Timing {
   startHour: number;
   endHour: number;
 }
@@ -7,7 +7,7 @@ export interface Location {
   title: string;
   subtitle?: string;
   directionDegrees: number;
-  timings?: Timings;
+  timings?: Array<Timing>;
 }
 
 export interface Configs {
