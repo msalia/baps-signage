@@ -5,26 +5,26 @@ const SecurityRight: Configs = {
   locations: [
     {
       title: 'Shayona Café',
-      subtitle: 'Snacks & Sweets',
+      subtitle: 'Refreshments & Snacks',
       directionDegrees: 90,
       timings: [
         {
-          startHour: 8,
-          endHour: 19.75,
+          startHour: 11,
+          endHour: 20,
         },
       ],
     },
-    {
-      title: 'Aksharpith',
-      subtitle: 'Books & Gifts',
-      directionDegrees: 90,
-      timings: [
-        {
-          startHour: 8,
-          endHour: 19.75,
-        },
-      ],
-    },
+    // {
+    //   title: 'Aksharpith',
+    //   subtitle: 'Books & Gifts',
+    //   directionDegrees: 90,
+    //   timings: [
+    //     {
+    //       startHour: 8,
+    //       endHour: 19.75,
+    //     },
+    //   ],
+    // },
   ],
 };
 

@@ -10,6 +10,7 @@ import Directions from './Directions';
 
 import Default from './configs/Default';
 import SecurityRight from './configs/SecurityRight';
+import SecurityLeft from './configs/SecurityLeft';
 
 const useStyles = createUseStyles({
   body: {
@@ -27,6 +28,8 @@ function useConfigs(): Configs {
   switch (page) {
     case Pages.SECURITY_RIGHT:
       return SecurityRight;
+    case Pages.SECURITY_LEFT:
+      return SecurityLeft;
   }
   return Default;
 }

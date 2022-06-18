@@ -1,6 +1,7 @@
 export enum Pages {
   DEFAULT = 0,
   SECURITY_RIGHT = 1,
+  SECURITY_LEFT = 2,
 }
 
 export enum UIConfigs {
