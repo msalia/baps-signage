@@ -13,7 +13,7 @@ const Default: Configs = {
     },
     {
       title: 'Mandir',
-      subtitle: 'A Hindu Place of Devotion',
+      subtitle: 'A place of peace that welcomes all',
       directionDegrees: 270,
       timings: [
         {
