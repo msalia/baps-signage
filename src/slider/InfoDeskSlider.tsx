@@ -63,10 +63,6 @@ const SLIDES: Slide[] = [
     type: 'video',
     src: LogoLoop,
   },
-  {
-    type: 'image',
-    src: Display1,
-  },
 ];
 
 function Image({src}: Slide) {
