@@ -2,8 +2,8 @@ import type {Location} from './configs/Configs';
 
 import React, {useEffect, useState} from 'react';
 import {createUseStyles} from 'react-jss';
-import {UIConfigs, UISizes} from './Constants';
-import Arrow from './assets/arrow.png';
+import {UIConfigs, UISizes} from '../Constants';
+import Arrow from '../assets/arrow.png';
 import classNames from 'classnames';
 import moment from 'moment-timezone';
 
