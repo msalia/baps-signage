@@ -3,8 +3,6 @@ import type {Configs} from './configs/Configs';
 import React from 'react';
 import {createUseStyles} from 'react-jss';
 import Tile from '../assets/tile.png';
-import {pageState} from '../states/states.js';
-import {useRecoilValue} from 'recoil';
 import {Pages} from '../Constants';
 import Directions from './Directions';
 

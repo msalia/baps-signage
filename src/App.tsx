@@ -1,14 +1,8 @@
-import React from 'react';
-import {createUseStyles} from 'react-jss';
 import Signage from './signage/Signage';
 import {useRecoilValue} from 'recoil';
 import {pageState} from './states/states.js';
 import {Pages} from './Constants';
 import InfoDeskSlider from './slider/InfoDeskSlider';
-
-const useStyles = createUseStyles({
-  body: {},
-});
 
 function App() {
   const page = useRecoilValue(pageState);

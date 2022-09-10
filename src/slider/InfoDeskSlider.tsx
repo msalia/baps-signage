@@ -1,8 +1,6 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import {createUseStyles} from 'react-jss';
-import {Pages} from '../Constants';
 import LogoLoop from '../assets/sliders/logo-loop.mp4';
-import Display1 from '../assets/sliders/better-living-wc-display.jpg';
 import {SwitchTransition, CSSTransition} from 'react-transition-group';
 
 const DEFAULT_LENGTH_IN_SEC = 30;
@@ -104,6 +102,7 @@ function InfoDeskSlider(_props: Props) {
       exitActive: styles.slideLeaveActive,
       exitDone: styles.slideLeaveDone,
     }),
+    // eslint-disable-next-line
     [],
   );
 
