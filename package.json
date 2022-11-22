@@ -25,7 +25,7 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "react-scripts --optimize_for_size --max_old_space_size=460 --gc_interval=100 start",
+    "start": "react-scripts --expose-gc --optimize_for_size --max_old_space_size=256 --gc_interval=100 start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
